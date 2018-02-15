@@ -1,0 +1,38 @@
+package br.com.effect4.drools.problem.rules
+
+import br.com.effect4.drools.problem.pojos.Pojo;
+import org.slf4j.Logger;
+
+global Logger log;
+
+rule "addition"
+    when
+        $pojo : Pojo( )
+    then
+        log.debug("rule addition");
+        $pojo.setAdditionResult( $pojo.getNumberA() + $pojo.getNumberB() );
+end
+
+rule "substraction"
+    when
+        $pojo : Pojo( )
+    then
+        log.debug("rule substraction");
+        $pojo.setSubtractionResult( $pojo.getNumberA() - $pojo.getNumberB() );
+end
+
+rule "multiplication"
+    when
+        $pojo : Pojo( )
+    then
+        log.debug("rule multiplication");
+        $pojo.setMultiplicationResult( $pojo.getNumberA() * $pojo.getNumberB() );
+end
+
+rule "division"
+    when
+        $pojo : Pojo( )
+    then
+        log.debug("rule division");
+        $pojo.setDivisionResult( $pojo.getNumberA() / $pojo.getNumberB() );
+end
